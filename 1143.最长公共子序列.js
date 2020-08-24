@@ -4,7 +4,7 @@
  * @Autor: WangQiaoLing
  * @Date: 2020-08-06 20:01:58
  * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-08-06 20:17:54
+ * @LastEditTime: 2020-08-08 20:25:55
  */
 /*
  * @lc app=leetcode.cn id=1143 lang=javascript
@@ -17,8 +17,7 @@
  * @param {string} text1
  * @param {string} text2
  * @return {number}
- */
-var longestCommonSubsequence = function (text1, text2) {
+ */ var longestCommonSubsequence = function (text1, text2) {
   let n = text1.length
   let m = text2.length
   let dp = Array.from(new Array(n + 1), () => new Array(m + 1))
@@ -42,4 +41,5 @@ var longestCommonSubsequence = function (text1, text2) {
 
   return dp[n][m]
 }
+
 // @lc code=end

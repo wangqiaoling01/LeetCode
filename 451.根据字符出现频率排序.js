@@ -4,7 +4,7 @@
  * @Autor: WangQiaoLing
  * @Date: 2020-08-09 22:34:43
  * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-08-09 23:05:03
+ * @LastEditTime: 2020-08-14 22:14:05
  */
 /*
  * @lc app=leetcode.cn id=451 lang=javascript
@@ -42,7 +42,6 @@
 //   return res.join('')
 // }
 // frequencySort('tree')
-
 var frequencySort = function (s) {
   const len = s.length
   if (!len) {

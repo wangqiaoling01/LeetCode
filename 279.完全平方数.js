@@ -26,6 +26,8 @@ var numSquares = function (n) {
       dp[i] = Math.min(dp[i], dp[i - j * j] + 1)
     }
   }
+  console.log(dp[n])
   return dp[n]
 }
+numSquares(3)
 // @lc code=end
