@@ -16,19 +16,12 @@ var reverse = function (x) {
     ret = ret * 10 + (num % 10)
     num = parseInt(num / 10)
   }
-  console.log(ret)
-  const b1 = Math.pow(-2, -31)
   if (x < 0) {
-    ret = -ret
-    if (ret <= b1) {
-      return 0
-    } else {
-      return ret
-    }
-    // return (ret =  ? 0 : -ret)
+    ret = -ret <= Math.pow(-2, 31) ? 0 : -ret
   } else {
-    return (ret = x >= Math.pow(2, 31) ? 0 : ret)
+    ret = ret >= Math.pow(2, 31) - 1 ? 0 : ret
   }
+  return ret
 }
-console.log(reverse(-123))
+// console.log(reverse(-123))
 // @lc code=end
