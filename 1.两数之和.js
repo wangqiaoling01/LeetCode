@@ -1,13 +1,4 @@
 /*
- * @Description: Description
- * @Version: 1.0
- * @Autor: WangQiaoLing
- * @Date: 2020-06-02 07:17:30
- * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-06-02 07:42:42
- */
-
-/*
  * @lc app=leetcode.cn id=1 lang=javascript
  *
  * [1] 两数之和
@@ -35,7 +26,7 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function (nums, target) {
+var twoSum1 = function (nums, target) {
   const result = {} // 记录每个数需要的值
   for (let i = 0; i < nums.length; i++) {
     const element = nums[i]
@@ -44,6 +35,16 @@ var twoSum = function (nums, target) {
     } else {
       result[target - element] = i
     }
+  }
+}
+var twoSum = function (nums, target) {
+  const map = new Map()
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i]
+    if (map.has(diff)) {
+      return [map.get(diff), i]
+    }
+    map.set(nums[i], i)
   }
 }
 // @lc code=end

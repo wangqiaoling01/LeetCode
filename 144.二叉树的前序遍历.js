@@ -1,13 +1,4 @@
 /*
- * @Description: Description
- * @Version: 1.0
- * @Autor: WangQiaoLing
- * @Date: 2020-07-22 09:38:10
- * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-07-22 09:49:43
- */
-
-/*
  * @lc app=leetcode.cn id=144 lang=javascript
  *
  * [144] 二叉树的前序遍历

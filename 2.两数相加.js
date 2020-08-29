@@ -1,12 +1,4 @@
 /*
- * @Description: Description
- * @Version: 1.0
- * @Autor: WangQiaoLing
- * @Date: 2020-08-02 20:47:56
- * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-08-02 22:33:57
- */
-/*
  * @lc app=leetcode.cn id=2 lang=javascript
  *
  * [2] 两数相加

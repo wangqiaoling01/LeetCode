@@ -1,13 +1,4 @@
 /*
- * @Description: Description
- * @Version: 1.0
- * @Autor: WangQiaoLing
- * @Date: 2020-07-22 11:07:14
- * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-07-22 11:07:54
- */
-
-/*
  * @lc app=leetcode.cn id=20 lang=javascript
  *
  * [20] 有效的括号
