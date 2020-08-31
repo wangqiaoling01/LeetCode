@@ -1,12 +1,4 @@
 /*
- * @Description: Description
- * @Version: 1.0
- * @Autor: WangQiaoLing
- * @Date: 2020-08-08 22:04:05
- * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-08-08 22:11:38
- */
-/*
  * @lc app=leetcode.cn id=88 lang=javascript
  *
  * [88] 合并两个有序数组
