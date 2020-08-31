@@ -13,22 +13,30 @@ var longestPalindrome = function (s) {
   /**
    *
    * @param {string} s 待判断的字符串
-   * @return {boolean} 是回文串返回 true
+   * @param {number} left 开始索引
+   * @param {number} right 结束索引
    */
-  const isPalindrome = (s) => {
-    let left = 0,
-      right = s.length - 1
-    while (left <= right) {
+  const isPalindrome = (s, left, right) => {
+    while (left < right) {
       if (s[left] !== s[right]) return false
+      left++
+      right--
     }
     return true
   }
-  for (let i = 0; i < s.length; i++) {
-    for (let j = 1 + 1; j < s.length; j++) {
-      if (isPalindrome(s.slice(i, j))) {
-        return s.slice(i, j)
+
+  const len = s.length
+  if (len < 2) return s
+  let max_len = 1,
+    begin = 0
+  for (let i = 0; i < len - 1; i++) {
+    for (let j = i + 1; j < len; j++) {
+      if (j - i + 1 > max_len && isPalindrome(s, i, j)) {
+        max_len = j - i + 1
+        begin = i
       }
     }
   }
+  return s.substring(begin, begin + max_len)
 }
 // @lc code=end
