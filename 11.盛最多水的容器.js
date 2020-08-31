@@ -1,13 +1,4 @@
 /*
- * @Description: Description
- * @Version: 1.0
- * @Autor: WangQiaoLing
- * @Date: 2020-07-22 11:05:30
- * @LastEditors: WangQiaoLing
- * @LastEditTime: 2020-07-27 14:11:38
- */
-
-/*
  * @lc app=leetcode.cn id=11 lang=javascript
  *
  * [11] 盛最多水的容器
@@ -19,18 +10,20 @@
  * @return {number}
  */
 var maxArea = function (height) {
-  if (!height || height.length <= 1) return 0
-  let left = 0
-  let right = height.length - 1
-  let maxArea = 0
+  if (height.length === 1 || !height) return 0
+  let left = 0,
+    right = height.length - 1,
+    max_area = 0
   while (left < right) {
-    let area = Math.abs(right - left) * Math.min(height[left], height[right])
-    if (area > maxArea) {
-      maxArea = area
+    const area = Math.abs(right - left) * Math.min(height[left], height[right])
+    max_area = area > max_area ? area : max_area
+    if (height[left] < height[right]) {
+      left++
+    } else {
+      right--
     }
-    height[left] < height[right] ? left++ : right--
   }
-  return maxArea
+  return max_area
 }
 
 // @lc code=end
