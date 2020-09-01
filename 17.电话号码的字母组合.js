@@ -9,7 +9,7 @@
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function (digits) {
+var letterCombinations1 = function (digits) {
   if (digits.length === 0) return []
   const init_map = () => {
     const map = new Map()
@@ -43,4 +43,31 @@ var letterCombinations = function (digits) {
   backtrack(res, map, digits, 0, '')
   return res
 }
+var letterCombinations = function (digits) {
+  if (!digits) return []
+  const res = []
+  const map = new Map()
+  map.set('2', ['a', 'b', 'c'])
+  map.set('3', ['d', 'e', 'f'])
+  map.set('4', ['g', 'h', 'i'])
+  map.set('5', ['j', 'k', 'l'])
+  map.set('6', ['m', 'n', 'o'])
+  map.set('7', ['p', 'q', 'r', 's'])
+  map.set('8', ['t', 'u', 'v'])
+  map.set('9', ['w', 'x', 'y', 'z'])
+  const dfs = (subStr, i) => {
+    if (i === digits.length) {
+      res.push(subStr)
+      return
+    }
+    const arr = map.get(digits[i])
+    for (let j = 0; j < arr.length; j++) {
+      dfs(subStr + arr[j], i + 1)
+    }
+  }
+  dfs('', 0)
+  console.log(res)
+  return res
+}
+letterCombinations('23')
 // @lc code=end
