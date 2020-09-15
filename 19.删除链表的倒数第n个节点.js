@@ -33,4 +33,20 @@ var removeNthFromEnd = function (head, n) {
   p2.next = p2.next.next
   return dummy.next
 }
+var removeNthFromEnd1 = function (head, n) {
+  const temp = new ListNode(0)
+  temp.next = head
+  let p1 = (p2 = temp)
+  // p1 走 n 步
+  for (let i = 0; i < n && p1 != null; i++) {
+    p1 = p1.next
+  }
+  // p1、p2 走 l - n 步， p2 所在的位子即为 倒数第 n 个节点
+  while (p1.next !== null) {
+    p1 = p1.next
+    p2 = p2.next
+  }
+  p2.next = p2.next.next
+  return temp.next
+}
 // @lc code=end

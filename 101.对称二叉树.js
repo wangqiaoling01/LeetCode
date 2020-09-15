@@ -17,21 +17,20 @@
  * @return {boolean}
  */
 var isSymmetric = function (root) {
-  const check = (left, right) => {
-    if (left == null && right == null) return true
-    if (left && right) {
+  if (!root) return true
+
+  const check = (leftNode, rightNode) => {
+    if (leftNode == null && rightNode == null) return true
+    if (leftNode && rightNode) {
       return (
-        left.val === right.val &&
-        check(left.left, right.right) &&
-        check(left.right, right.left)
+        leftNode.val === rightNode.val &&
+        check(leftNode.left, rightNode.right) &&
+        check(leftNode.right, rightNode.left)
       )
     }
     return false
   }
-  if (root) {
-    return check(root.left, root.right)
-  } else {
-    return true
-  }
+
+  return check(root.left, root.right)
 }
 // @lc code=end

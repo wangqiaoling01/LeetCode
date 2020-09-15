@@ -13,11 +13,29 @@
  * }
  */
 /**
+ * 二叉搜索树一个明显的特点就是中序遍历以后是一个有序数组，所以可以通过这个对比判断是否二叉搜索树
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isValidBST = function(root) {
+var isValidBST = function (root) {
+  const quene = []
+  function dfs(root) {
+    if (!root) {
+      return
+    }
+    root.left && dfs(root.left)
+    quene.push(root.val)
+    root.right && dfs(root.right)
+  }
 
-};
+  dfs(root)
+
+  for (let i = 0; i < quene.length; i++) {
+    if (quene[i] >= quene[i + 1]) {
+      return false
+    }
+  }
+
+  return true
+}
 // @lc code=end
-

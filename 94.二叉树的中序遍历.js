@@ -22,33 +22,37 @@
  * }
  */
 /**
+ * 递归
  * @param {TreeNode} root
  * @return {number[]}
  */
-// var inorderTraversal1 = function (root, arr = []) {
-//   if (root) {
-//     inorderTraversal(root.left, arr)
-//     arr.push(root.val)
-//     inorderTraversal(root.right, arr)
-//   }
-//   return arr
-// }
-var inorderTraversal = function (root) {
-  let stack = []
-  let result = []
-  let cur = root
-  while (true) {
-    while (cur) {
-      stack.push(cur)
-      cur = cur.left
-    }
-    let pop_item = stack.pop()
-    result.push(pop_item)
-    cur = cur.right
-    if (!cur && stack.length === 0) {
-      break
-    }
+var inorderTraversal1 = function (root, arr = []) {
+  if (root) {
+    inorderTraversal(root.left, arr)
+    arr.push(root.val)
+    inorderTraversal(root.right, arr)
   }
-  return result
+  return arr
+}
+/**
+ * 非递归
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var inorderTraversal = function (root) {
+  const res = []
+  const stk = []
+  while (root || stk.length) {
+    // 当前节点不空，入栈，一直往左
+    while (root) {
+      stk.push(root)
+      root = root.left
+    }
+    // 此时节点是叶子节点，加入到 res 中，向右走
+    root = stk.pop()
+    res.push(root.val)
+    root = root.right
+  }
+  return res
 }
 // @lc code=end
