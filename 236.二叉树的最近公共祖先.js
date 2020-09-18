@@ -51,5 +51,8 @@ const lowestCommonAncestor = (root, p, q) => {
     return right
   }
 }
-
+const root = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4],
+  p = 5,
+  q = 1
+console.log(lowestCommonAncestor(root, p, q))
 // @lc code=end
