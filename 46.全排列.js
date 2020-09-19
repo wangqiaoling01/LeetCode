@@ -18,20 +18,25 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function (nums) {
-  let list = []
-  backtrack(list, [], nums)
-  return list
+function permute(nums) {
+  let res = []
+  perm(nums, 0, nums.length - 1, res)
+  return res
 }
-function backtrack(list, temp, nums) {
-  if (temp.length == nums.length) {
-    return list.push([...temp])
-  }
-  for (let i = 0; i < nums.length; i++) {
-    if (temp.includes(nums[i])) continue
-    temp.push(nums[i])
-    backtrack(list, temp, nums)
-    temp.pop()
+
+// p 全排列的开始位置 q 全排列的结束位置
+function perm(arr, p, q, res) {
+  if (p === q) {
+    res.push([...arr])
+  } else {
+    for (let i = p; i <= q; i++) {
+      ;[arr[p], arr[i]] = [arr[i], arr[p]]
+      perm(arr, p + 1, q, res)
+      // 这里再次交换是为了保证 arr 的相对一致
+      ;[arr[p], arr[i]] = [arr[i], arr[p]]
+    }
   }
 }
+
+console.log(permute([1, 2, 3]))
 // @lc code=end
