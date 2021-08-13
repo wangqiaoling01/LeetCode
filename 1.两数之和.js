@@ -47,5 +47,4 @@ var twoSum = function (nums, target) {
     map.set(nums[i], i)
   }
 }
-// 测试
 // @lc code=end
